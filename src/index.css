@@ -11,16 +11,7 @@ h1{
     height: 100%;
     margin: 5%;
 }
-table{
-    width: 100%;
-    text-align: left;
-}
-th,td{
-    padding: 10px;
-}
-th{
-    background-color: aliceblue;
-}
+
 ul{
     list-style: none;
 }
@@ -67,4 +58,45 @@ HEADER
 .cardFilter{
     top: 6rem;
     left: 35rem;
+}
+.right input{
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid rgb(70, 67, 67);
+    outline: none;
+}
+/*
+================================
+Table
+================================
+*/
+table{
+    width: 100%;
+    text-align: left;
+}
+th,td{
+    padding: 10px;
+}
+th{
+    background-color: aliceblue;
+}
+td{
+    border-bottom: 1px solid rgb(61, 59, 59);
+}
+tr:nth-child(even){
+    background-color: rgb(245, 204, 204);
+}
+/*
+================================
+Pagination
+================================
+*/
+.pagination_wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.pagination_wrapper button{
+    padding: 10px;
+    margin-top: 10px;
 }

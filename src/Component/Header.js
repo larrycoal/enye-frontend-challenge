@@ -39,7 +39,6 @@ const Header = (props) => {
     <div className="header_wrapper">
       <div className="left">
         <h1>ENYE-PROFILES</h1>
-        <span>Filters</span>
         <span>Gender: </span>
         <span className="dropdown" onClick={showGenderFilter}>
           {gFilter.filter}
@@ -51,7 +50,7 @@ const Header = (props) => {
         <span className="dropdown" onClick={showCardFilter}>
           {cFilter.filter}
           <span>
-            <i className="fas fa-sort-down   "></i>
+            <i className="fas fa-sort-down"></i>
           </span>
         </span>
       </div>

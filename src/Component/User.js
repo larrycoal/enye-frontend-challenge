@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const User = (props) => {
   const { list } = props;
   const [state, setState] = useState({
     currentPage: 1,
     profilePerPage: 20,
-    totalPage: Math.ceil(list.length / 20),
     start:0,
   });
   var PageList = list
@@ -13,16 +12,20 @@ const User = (props) => {
     : null;
 
   const handleNextPage = () => {
+      if(state.currentPage < Math.ceil(list.length / 20)){
       setState({
           ...state,
-          start:state.start + state.profilePerPage
-      })
+          start:state.start + state.profilePerPage,
+          currentPage:state.currentPage+1
+      })}
   };
   const handlePrevPage = () => {
+      if(state.currentPage > 1){
     setState({
         ...state,
-        start:state.start - state.profilePerPage
-    })
+        start:state.start - state.profilePerPage,
+        currentPage:state.currentPage-1
+    })}
   };
   return (
     <div className="user_wrapper">
@@ -40,22 +43,25 @@ const User = (props) => {
         <tbody>
           {PageList?PageList.map((list, i) => (
             <tr key={i}>
-              <td>{i + 1}</td>
-              <td>{list.FirstName}</td>
+              <td>{state.start + i}</td>
+              <td>{list.FirstName.toUpperCase()}</td>
               <td>{list.LastName}</td>
               <td>{list.Gender}</td>
               <td>{list.PaymentMethod}</td>
               <td>{list.Email}</td>
             </tr>
-          )):null}
+          )):
+          <div className="loading">
+            Loading
+          </div>
+          }
         </tbody>
       </table>
-      <span>
+      <div className="pagination_wrapper">
         <button onClick={handlePrevPage} >Prev Page</button>
-      </span>
-      <span>
+      
         <button onClick={handleNextPage}>Next Page</button>
-      </span>
+      </div>
     </div>
   );
 };
