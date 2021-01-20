@@ -14,12 +14,17 @@ const User = (props) => {
   var PageList = list
     ? list.slice(state.start, state.start + state.profilePerPage)
     : null;
+
+
+
     const handleOpen = (list) => {
       setDetails({
         open:true,
         body:list
       })
     };
+
+
     const handleClose = () => {
       setDetails({
         ...details,
@@ -27,6 +32,7 @@ const User = (props) => {
         
       })
     };
+    
   const handleNextPage = () => {
       if(state.currentPage < Math.ceil(list.length / 20)){
       setState({
@@ -69,9 +75,7 @@ const User = (props) => {
               <td className="modal"onClick={()=>handleOpen(list)}>View Details</td>
             </tr>
           )):
-          <div className="loading">
-            Loading
-          </div>
+          null
           }
         </tbody>
       </table>
