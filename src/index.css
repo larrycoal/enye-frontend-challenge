@@ -86,6 +86,9 @@ td{
 tr:nth-child(even){
     background-color: rgb(245, 204, 204);
 }
+.modal{
+    cursor: pointer;
+}
 /*
 ================================
 Pagination
