@@ -29,19 +29,50 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SimpleModal(props) {
-   
-   
+   const{profile}=props
+   console.log(props)
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">hello</h2>
       <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-      <SimpleModal />
+         FirstName:  {profile.FirstName}
+        </p>
+        <p id="simple-modal-description">
+         LastName:  {profile.LastName}
+        </p>
+        <p id="simple-modal-description">
+         CreditCardNumber:  {profile.CreditCardNumber}
+        </p>
+        <p id="simple-modal-description">
+         CreditCardType  {profile.CreditCardType}
+        </p>
+        <p id="simple-modal-description">
+         DomainName:  {profile.DomainName}
+        </p>
+        <p id="simple-modal-description">
+         Email :{profile.Email}
+        </p>
+        <p id="simple-modal-description">
+         Gender :{profile.Gender}
+        </p>
+        <p id="simple-modal-description">
+         LastLogin:{profile.LastLogin}
+        </p>
+        <p id="simple-modal-description">
+         PaymentMethod :{profile.PaymentMethod}
+        </p>
+        <p id="simple-modal-description">
+         PhoneNumber:{profile.PhoneNumber}
+        </p>
+        <p id="simple-modal-description">
+         URL :{profile.URL}
+        </p>
+        <p id="simple-modal-description">
+         UserName:{profile.UserName}
+        </p>
     </div>
   );
 
